@@ -116,9 +116,10 @@ public class NameMatch {
 
 	// soundex algorithm
     public static String Soundex(String s) { 
+    	if (s.length()==0) return "";
         char[] x = s.toUpperCase().toCharArray();
         char firstLetter = x[0];
-
+        
         // convert letters to numeric code
         for (int i = 0; i < x.length; i++) {
             switch (x[i]) {
@@ -190,11 +191,13 @@ public class NameMatch {
     }
 	
 	// spellcheck score
+	// spellcheck score
 	public static int score(String s, String t, boolean frontTruncation) {
-		int distance = complev(s.replaceAll("[^A-Za-z0-9]+", ""), t.replaceAll("[^A-Za-z0-9]+", ""));
+		int distance = complev(s.replaceAll("[^A-Za-z0-9]+", "").toUpperCase(), t.replaceAll("[^A-Za-z0-9]+", "").toUpperCase());
+		if(s.length() == 0 || t.length()==0 ) return distance;
 		if (!frontTruncation) {
 			if (Soundex(s).equals(Soundex(t))) distance--;
-			if (!s.substring(0,1).equals(t.substring(0,1))) distance++;
+			if (!s.substring(0,1).toUpperCase().equals(t.substring(0,1).toUpperCase())) distance++;
 		}
 		return distance;
 	}

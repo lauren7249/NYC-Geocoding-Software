@@ -246,9 +246,9 @@ public class Geocode {
 
 	public static void main(String[] args) {
 		
-		Geocode g = new Geocode("C:/Users/571395/Documents/Data/Restaurant Inspections/WebExtract.txt",
-				"C:/Users/571395/Documents/Data/RestaurantInspectionsGeocoded.txt", ",", 
-				"building", "street", "zipcode", "boro", "");		
+		Geocode g = new Geocode("C:/Users/571395/Documents/Data/Businesses_currently_licensed_by_DCA.csv",
+				"", ",", 
+				"full address", "full address", "zip code", "borough", "city");		
 
 
 		/*
