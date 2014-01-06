@@ -245,13 +245,13 @@ public class Geocode {
 	}
 
 	public static void main(String[] args) {
-		
+		/*
 		Geocode g = new Geocode("C:/Users/571395/Documents/Data/Businesses_currently_licensed_by_DCA.csv",
 				"", ",", 
 				"full address", "full address", "zip code", "borough", "city");		
 
-
-		/*
+*/
+		
 		if (args.length==0) {
 			//interactive call
 			StdOut.println("What is the full path of the file to geocode? ");
@@ -295,7 +295,7 @@ public class Geocode {
 		String zip = args[5];			
 		String boro = args[6];		
 		String city = args[7];	
-		Geocode g = new Geocode(infile,outfile,delim,housenum, stname, zip, boro, city);		*/
+		Geocode g = new Geocode(infile,outfile,delim,housenum, stname, zip, boro, city);		
 
 	}
 }
